@@ -1,0 +1,54 @@
+/* Container takes full screen height */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* center vertically */
+  align-items: center;       /* center horizontally */
+  width: 100%;
+  height: 100vh;             /* fit exactly in one window */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;          /* prevent outer scroll */
+}
+
+/* Full width responsive textarea */
+.resume-textbox {
+  width: 100%;
+  max-width: 1000px;         /* optional max width for large screens */
+  height: 500px;             /* increased height */
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: none;              /* disable manual resize */
+  overflow-y: auto;          /* vertical scrollbar only INSIDE textarea if text overflows */
+  overflow-x: hidden;        /* ❌ no horizontal scrollbar */
+  white-space: pre-wrap;     /* ✅ wrap text to new line */
+  word-wrap: break-word;     /* ✅ break long words */
+  box-sizing: border-box;
+}
+
+/* Button container centers the button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Upload button styling */
+.upload-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #357abd;
+}
