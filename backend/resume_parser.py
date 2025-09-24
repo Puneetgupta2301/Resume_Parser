@@ -127,20 +127,20 @@ yp = clf.predict(X_test)
 print('Accuracy of KNeighbors Classifier on training set: {:.2f}'.format(clf.score(X_train, y_train)))
 print('Accuracy of KNeighbors Classifier on test set: {:.2f}'.format(clf.score(X_test, y_test)))
 
-!pip install pickle
-import pickle
+# !pip install pickle
+# import pickle
 
-save_label_encoder = open("pickles/le.pickle","wb")
-pickle.dump(le, save_label_encoder)
-save_label_encoder.close()
+# save_label_encoder = open("pickles/le.pickle","wb")
+# pickle.dump(le, save_label_encoder)
+# save_label_encoder.close()
 
-save_word_vectorizer = open("pickles/word_vectorizer.pickle","wb")
-pickle.dump(word_vectorizer, save_word_vectorizer)
-save_word_vectorizer.close()
+# save_word_vectorizer = open("pickles/word_vectorizer.pickle","wb")
+# pickle.dump(word_vectorizer, save_word_vectorizer)
+# save_word_vectorizer.close()
 
-save_classifier = open("pickles/clf.pickle","wb")
-pickle.dump(clf, save_classifier)
-save_classifier.close()
+# save_classifier = open("pickles/clf.pickle","wb")
+# pickle.dump(clf, save_classifier)
+# save_classifier.close()
 
 class JobPredictor:
     def __init__(self) -> None:
@@ -262,7 +262,7 @@ f'JD uploaded! Position: {resume_position}'
 
 """Cosine Similarity"""
 
-pip install PyPDF2
+
 
 text_tokenizer= WhitespaceTokenizer()
 remove_characters= str.maketrans("", "", "±§!@#$%^&*()-_=+[]}{;'\:,./<>?|")
@@ -283,4 +283,3 @@ similarity_score_docx = cosine_similarity(count_docx)
 match_percentage_docx= round((similarity_score_docx[0][1]*100),2)
 f'Match percentage with the Job description: {match_percentage_docx}'
 
-!pip install colabcode
