@@ -1,54 +1,166 @@
-/* Container takes full screen height */
 .resume-container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* center vertically */
-  align-items: center;       /* center horizontally */
-  width: 100%;
-  height: 100vh;             /* fit exactly in one window */
-  padding: 20px;
-  box-sizing: border-box;
-  overflow: hidden;          /* prevent outer scroll */
-}
-
-/* Full width responsive textarea */
-.resume-textbox {
-  width: 100%;
-  max-width: 1000px;         /* optional max width for large screens */
-  height: 500px;             /* increased height */
-  border: 2px solid #4a90e2;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 16px;
-  line-height: 1.5;
-  resize: none;              /* disable manual resize */
-  overflow-y: auto;          /* vertical scrollbar only INSIDE textarea if text overflows */
-  overflow-x: hidden;        /* ❌ no horizontal scrollbar */
-  white-space: pre-wrap;     /* ✅ wrap text to new line */
-  word-wrap: break-word;     /* ✅ break long words */
-  box-sizing: border-box;
-}
-
-/* Button container centers the button */
-.button-container {
-  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  width: 100%;
+  background-color: #f0f4f8;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Upload button styling */
-.upload-btn {
-  background-color: #4a90e2;
+.jd-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+.jd-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.jd-textarea {
+  width: 500px;
+  height: 300px; /* Increased height */
+  resize: none;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jd-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.jd-textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+.jd-textarea:focus::placeholder {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .jd-textarea {
+    height: 200px; /* Increased height for mobile */
+    font-size: 0.9rem;
+  }
+}
+
+.save-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
   color: white;
   border: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-size: 18px;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn:hover {
+  background-color: #2563eb;
+  transform: scale(1.02);
+}
+
+.upload-container {
+  margin-bottom: 1.5rem;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #10b981;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .upload-btn:hover {
-  background-color: #357abd;
+  background-color: #059669;
+  transform: scale(1.02);
+}
+
+.results-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.results-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.result-item {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0.5rem 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 0.5rem;
+  }
+
+  .jd-container,
+  .results-box {
+    max-width: 100%;
+  }
+
+  .jd-textarea {
+    height: 150px;
+    font-size: 0.9rem;
+  }
+
+  .save-btn,
+  .upload-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .results-title {
+    font-size: 1.1rem;
+  }
+
+  .result-item {
+    font-size: 0.9rem;
+  }
 }
