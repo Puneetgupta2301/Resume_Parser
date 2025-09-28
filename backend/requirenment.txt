@@ -1,0 +1,5 @@
+pandas
+nltk
+docx2txt
+chart_studio
+fastapi

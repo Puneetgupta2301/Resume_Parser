@@ -1,0 +1,129 @@
+/* Full-screen container with centered content */
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f4f8; /* Light gray background for contrast */
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 2x2 grid that takes full viewport height minus padding */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px; /* Constrain for large screens */
+  height: calc(100vh - 4rem); /* Full height minus padding */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Card styling with interactive effects */
+.dashboard-card {
+  background: linear-gradient(145deg, #007bff, #005bb5); /* Gradient blue */
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #4a90e2; /* Subtle border */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect: scale up, glow border, enhanced shadow */
+.dashboard-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: #80bfff; /* Lighter blue glow */
+}
+
+/* Active state: subtle shrink for click feedback */
+.dashboard-card.active {
+  transform: scale(0.98);
+  border-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Card title: minimal and centered */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Textarea: minimal, modern, and interactive */
+.card-textarea {
+  width: 100%;
+  height: 60px; /* Reduced height for minimal look */
+  resize: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focus effect for textarea */
+.card-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  border: 1px solid #007bff;
+}
+
+/* Placeholder animation */
+.card-textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  transition: opacity 0.3s ease;
+}
+
+.card-textarea:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* FirstCard container styling */
+.firstcard-container {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    height: auto; /* Allow scrolling */
+  }
+
+  .dashboard-card {
+    padding: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-textarea {
+    height: 50px;
+    font-size: 0.85rem;
+  }
+}
