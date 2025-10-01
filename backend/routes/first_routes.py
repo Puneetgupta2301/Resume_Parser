@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, Form
 import io 
 import docx2txt
-from test import calculate_match
+from backend.test import calculate_match
 
 router = APIRouter()
 job_description_text = ""  # global variable to store JD
