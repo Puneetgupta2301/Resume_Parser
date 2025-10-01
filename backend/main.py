@@ -1,7 +1,7 @@
 # main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes.first_routes import router   # ensure routes.py exists in same folder
+from backend.routes.first_routes import router   # ensure routes.py exists in same folder
 
 app = FastAPI()
 
