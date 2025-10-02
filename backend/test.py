@@ -32,9 +32,10 @@ import plotly.express as px
 import chart_studio.plotly as py
 
 warnings.filterwarnings('ignore')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.path.join(BASE_DIR, "UpdatedResumeDataSet.csv")
 
-df = pd.read_csv('UpdatedResumeDataSet.csv', encoding='utf-8')
-
+df = pd.read_csv(CSV_PATH, encoding="utf-8")
 
 df[df.isna().any(axis=1) | df.isnull().any(axis=1)]
 
