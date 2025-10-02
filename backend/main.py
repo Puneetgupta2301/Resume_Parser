@@ -1,15 +1,16 @@
-# main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routes.first_routes import router   # ensure routes.py exists in same folder
+from backend.routes.first_routes import router   # make sure path is correct
 
 app = FastAPI()
 
-# ✅ Restrict CORS only to React frontend
+# 🔹 Your deployed frontend URL (Render gives you one when frontend service is live)
 origins = [
-    "https://resume-parser-1-6hus.onrender.com"
+    "https://resume-parser-1-6hus.onrender.com",  # your frontend
+    "http://localhost:5173",  # optional: for local React dev testing
 ]
 
+# Enable CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -18,10 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ Include API routes
+# Register routes
 app.include_router(router)
 
-# ✅ Root test endpoint
+# Health check endpoint
 @app.get("/")
 def root():
-    return {"message": "FastAPI is running!"}
+    return {"message": "🚀 FastAPI is running!"}
