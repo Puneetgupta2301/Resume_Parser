@@ -7,8 +7,7 @@ app = FastAPI()
 
 # ✅ Restrict CORS only to React frontend
 origins = [
-    "http://localhost:3000",  # CRA (default port)
-    "http://localhost:5173",  # Vite (default port)
+    "https://resume-parser-1-6hus.onrender.com"
 ]
 
 app.add_middleware(
