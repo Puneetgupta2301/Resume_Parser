@@ -1,6 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import "../Styles/FirstCard.css";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const FirstCard = () => {
   const [text, setText] = useState("");
@@ -11,7 +12,7 @@ const FirstCard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/get_data");
+        const response = await fetch(`${API_URL}/get_data`);
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
         setText(data.text);
@@ -30,7 +31,7 @@ const FirstCard = () => {
       const formData = new FormData();
       formData.append("jd", text);
 
-      const response = await fetch("http://127.0.0.1:8000/set_job_description", {
+      const response = await fetch(`${API_URL}/set_job_description`, {
         method: "POST",
         body: formData,
       });
@@ -56,7 +57,7 @@ const FirstCard = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/upload_doc", {
+      const response = await fetch(`${API_URL}/upload_doc`, {
         method: "POST",
         body: formData,
       });
@@ -106,8 +107,12 @@ const FirstCard = () => {
       {matchPercentage !== null && (
         <div className="results-box">
           <h4 className="results-title">Analysis Results</h4>
-          <p className="result-item"><strong>Predicted Role:</strong> {predictedRole}</p>
-          <p className="result-item"><strong>Match Percentage:</strong> {matchPercentage}%</p>
+          <p className="result-item">
+            <strong>Predicted Role:</strong> {predictedRole}
+          </p>
+          <p className="result-item">
+            <strong>Match Percentage:</strong> {matchPercentage}%
+          </p>
         </div>
       )}
     </div>
