@@ -1,5 +1,14 @@
-pandas
+ pandas 
+ numpy
+scikit-learn
 nltk
-docx2txt
+seaborn
+matplotlib
+plotly
 chart_studio
+docx2txt
 fastapi
+uvicorn
+gunicorn
+python-multipart
+fitz

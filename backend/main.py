@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routes.first_routes import router   # make sure path is correct
+from routes.first_routes import router   # make sure path is correct
 
 app = FastAPI()
 
