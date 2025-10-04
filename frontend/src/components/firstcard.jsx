@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import "../Styles/FirstCard.css"; // Assuming styles from FirstCard; add ResumeUpload.css if needed
 
-//const API_URL = import.meta.env.VITE_API_URL;
-const API_URL = "http://localhost:8000";  // Replace with your API URL
+const API_URL = import.meta.env.VITE_API_URL;
+//const API_URL = "http://localhost:8000";  // Replace with your API URL
 
 const FirstCard = () => {
   const { id } = useParams(); // Get the role ID from URL
